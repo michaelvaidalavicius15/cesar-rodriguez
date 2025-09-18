@@ -1,9 +1,9 @@
-// page.tsx - Enhanced
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import CombinedSection from '@/components/CombinedSection';
-import StorySection from '@/components/StorySection';
+import HeroSection from '@/components/HeroSection';
+import ProgressBarSection from '@/components/ProgressBarSection';
+import {StorySection} from '@/components/StorySection';
 import DonationSection from '@/components/DonationSection';
 import CallToAction from '@/components/CallToAction';
 import textsData from '@/data/texts.json';
@@ -37,20 +37,23 @@ export default function HomePage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 relative">
-      <CombinedSection texts={texts} currentRaised={currentRaised} goalAmount={goalAmount} language={language} />
-      <StorySection sections={texts.sections} />
-      <DonationSection texts={texts} language={language} />
-      <CallToAction texts={texts} />
+    <div className="relative">
+      <HeroSection texts={texts} currentRaised={currentRaised} goalAmount={goalAmount} language={language} />
       
-      {/* Scroll to Top Button */}
+      <div className="container mx-auto px-6 space-y-24">
+        <ProgressBarSection texts={texts} currentRaised={currentRaised} goalAmount={goalAmount} language={language} />
+        <StorySection sections={texts.sections} language={language} />
+        <DonationSection texts={texts} language={language} />
+        <CallToAction texts={texts} />
+      </div>
+      
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-3 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 animate-bounce"
+          className="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-blue-500 to-pink-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 animate-pulse hover:shadow-blue-500/30"
           title="Volver arriba"
         >
-          <ArrowUp className="h-6 w-6" />
+          <ArrowUp className="h-6 w-6 animate-bounce" />
         </button>
       )}
     </div>

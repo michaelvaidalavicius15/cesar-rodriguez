@@ -1,4 +1,3 @@
-// layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -41,18 +40,36 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <LanguageProvider>
-          <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0 z-0">
-              <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-              <div className="absolute top-40 right-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-2000"></div>
-              <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-4000"></div>
+          <div className="min-h-screen relative overflow-hidden">
+            {/* Enhanced Background with Multiple Layers */}
+            <div className="fixed inset-0 z-0">
+              {/* Base gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/80 to-indigo-100/60"></div>
+              
+              {/* Animated background orbs with better contrast */}
+              <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-radial from-purple-300/40 via-purple-200/20 to-transparent rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+              
+              <div className="absolute top-40 right-20 w-80 h-80 bg-gradient-radial from-blue-300/50 via-blue-200/25 to-transparent rounded-full mix-blend-multiply filter blur-xl animate-float animation-delay-2000"></div>
+              
+              <div className="absolute bottom-20 left-20 w-72 h-72 bg-gradient-radial from-indigo-300/40 via-indigo-200/20 to-transparent rounded-full mix-blend-multiply filter blur-xl animate-float animation-delay-4000"></div>
+              
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial from-pink-200/30 via-purple-100/15 to-transparent rounded-full mix-blend-multiply filter blur-2xl animate-pulse"></div>
+              
+              {/* Subtle overlay for better text contrast */}
+              <div className="absolute inset-0 bg-white/30"></div>
             </div>
+            
+            {/* Content with proper z-index */}
             <div className="relative z-10">
               <Header />
-              {children}
+              <main className="relative">
+                {children}
+              </main>
               <Footer />
             </div>
+            
+            {/* Barra superior mejorada que combina con la nueva paleta */}
+            <div className="top-bar-improved"></div>
           </div>
         </LanguageProvider>
       </body>

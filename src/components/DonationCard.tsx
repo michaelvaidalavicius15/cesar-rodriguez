@@ -1,6 +1,5 @@
-// DonationCard.tsx - Enhanced version
 import React, { useState } from 'react';
-import { Copy, Check, CreditCard } from 'lucide-react';
+import { Copy, Check, CreditCard, Globe, Building } from 'lucide-react';
 
 interface BankInfo {
   title: string;
@@ -29,7 +28,7 @@ export const DonationCard: React.FC<DonationCardProps> = ({
     try {
       await navigator.clipboard.writeText(text);
       setCopiedField(fieldName);
-      setTimeout(() => setCopiedField(''), 2000);
+      setTimeout(() => setCopiedField(''), 3000);
     } catch (err) {
       console.error('Error copying to clipboard:', err);
     }
@@ -38,52 +37,82 @@ export const DonationCard: React.FC<DonationCardProps> = ({
   const CopyButton: React.FC<{ text: string; fieldName: string }> = ({ text, fieldName }) => (
     <button
       onClick={() => copyToClipboard(text, fieldName)}
-      className="p-2 hover:bg-white/20 rounded-lg transition-all duration-300 group"
-      title="Copiar"
+      className="p-2 hover:bg-blue-100 rounded-xl transition-all duration-300 group hover:scale-110"
+      title={copiedField === fieldName ? 'Copiado!' : 'Copiar al portapapeles'}
     >
       {copiedField === fieldName ? (
-        <Check className="h-4 w-4 text-green-400" />
+        <Check className="h-5 w-5 text-green-500 animate-pulse" />
       ) : (
-        <Copy className="h-4 w-4 text-gray-500 group-hover:text-blue-400" />
+        <Copy className="h-5 w-5 text-slate-500 group-hover:text-blue-600" />
       )}
     </button>
   );
 
   return (
-    <div className="glass-strong rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 hover:scale-105 group animate-fadeInUp">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-bold text-gray-800 flex items-center">
-          <CreditCard className="h-6 w-6 mr-2 text-blue-600" />
-          {bankInfo.title}
-        </h3>
-        {isInternational && (
-          <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-semibold rounded-full">
-            Internacional
-          </span>
-        )}
-      </div>
-
-      <div className="space-y-3">
-        {[
-          { label: 'Banco', value: bankInfo.bank, field: 'bank' },
-          { label: 'Agencia', value: bankInfo.agency, field: 'agency' },
-          { label: 'Número de Cuenta', value: bankInfo.accountNumber, field: 'account' },
-          { label: 'Titular', value: bankInfo.accountHolder, field: 'holder' },
-          { label: 'Tipo de Cuenta', value: bankInfo.accountType, field: 'type' },
-          { label: 'SWIFT', value: bankInfo.swift, field: 'swift' },
-          { label: 'CPF', value: bankInfo.cpf, field: 'cpf' },
-          { label: 'Dirección', value: bankInfo.address, field: 'address' },
-        ].map((item, index) => 
-          item.value ? (
-            <div key={item.field} className="flex items-center justify-between bg-white/30 p-4 rounded-xl backdrop-blur-sm group-hover:bg-white/40 transition-all duration-300">
-              <div className="flex-1">
-                <p className="text-sm text-gray-600 font-medium">{item.label}</p>
-                <p className="font-semibold text-gray-800 mt-1">{item.value}</p>
-              </div>
-              <CopyButton text={item.value} fieldName={item.field} />
+    <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 border border-slate-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group animate-fadeInUp relative overflow-hidden">
+      {/* Background decoration - más sutil */}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/5 via-purple-500/3 to-transparent rounded-full blur-2xl"></div>
+      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-indigo-500/5 via-purple-500/3 to-transparent rounded-full blur-xl"></div>
+      
+      <div className="relative z-10">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center space-x-4">
+            <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl shadow-lg">
+              {isInternational ? (
+                <Globe className="h-7 w-7 text-white" />
+              ) : (
+                <Building className="h-7 w-7 text-white" />
+              )}
             </div>
-          ) : null
-        )}
+            <div>
+              <h3 className="text-2xl font-bold text-slate-800">
+                {bankInfo.title}
+              </h3>
+              <p className="text-sm text-slate-600 font-medium">
+                {bankInfo.bank}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bank Details */}
+        <div className="space-y-4">
+          {[
+            { label: 'Banco', value: bankInfo.bank, field: 'bank', icon: Building },
+            { label: 'Agencia', value: bankInfo.agency, field: 'agency', icon: Building },
+            { label: 'Número de Cuenta', value: bankInfo.accountNumber, field: 'account', icon: CreditCard },
+            { label: 'Titular', value: bankInfo.accountHolder, field: 'holder', icon: CreditCard },
+            { label: 'Tipo de Cuenta', value: bankInfo.accountType, field: 'type', icon: CreditCard },
+            { label: 'SWIFT', value: bankInfo.swift, field: 'swift', icon: Globe },
+            { label: 'CPF', value: bankInfo.cpf, field: 'cpf', icon: CreditCard },
+            { label: 'Dirección', value: bankInfo.address, field: 'address', icon: Building },
+          ].map((item) => 
+            item.value ? (
+              <div key={item.field} className="flex items-center justify-between bg-slate-50/80 hover:bg-slate-100/80 p-5 rounded-2xl border border-slate-200/40 transition-all duration-300 group-hover:shadow-sm">
+                <div className="flex-1">
+                  <div className="flex items-center mb-2">
+                    <item.icon className="h-4 w-4 text-blue-600 mr-2" />
+                    <p className="text-sm text-slate-600 font-semibold uppercase tracking-wide">
+                      {item.label}
+                    </p>
+                  </div>
+                  <p className="font-bold text-slate-800 text-lg leading-tight">
+                    {item.value}
+                  </p>
+                </div>
+                <CopyButton text={item.value} fieldName={item.field} />
+              </div>
+            ) : null
+          )}
+        </div>
+
+        {/* Instructions */}
+        <div className="mt-8 p-6 bg-gradient-to-r from-blue-50/80 to-purple-50/80 rounded-2xl border border-blue-200/40">
+          <p className="text-sm text-blue-800 font-semibold text-center">
+            💡 Haga clic en el ícono de copia para copiar la información al portapapeles
+          </p>
+        </div>
       </div>
     </div>
   );
