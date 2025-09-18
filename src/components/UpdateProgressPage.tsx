@@ -14,20 +14,42 @@ export default function UpdateProgressPage() {
       return;
     }
 
+    if (!currentRaised || isNaN(parseFloat(currentRaised))) {
+      setMessage('Por favor, ingrese una cantidad válida');
+      return;
+    }
+
     try {
-      // In a real app, this would update progress.json via an API or file write
-      // For demo, we'll just log the value
-      console.log('Updating currentRaised to:', currentRaised);
-      setMessage('Progreso actualizado correctamente');
-      setCurrentRaised('');
+      const response = await fetch('/api/progress', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: 'cesar',
+          password,
+          currentRaised,
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setMessage('Progreso actualizado correctamente');
+        setCurrentRaised('');
+      } else {
+        setMessage(data.error || 'Error al actualizar el progreso');
+      }
     } catch (error) {
-      setMessage('Error al actualizar el progreso');
+      setMessage(
+        'Error al actualizar el progreso: ' +
+        (error && typeof error === 'object' && 'message' in error
+          ? (error as { message?: string }).message
+          : 'Error desconocido')
+      );
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full">
+    <div className="container mx-auto px-4 py-8">
+      <div className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full mx-auto">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">Actualizar Progreso</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -39,7 +61,9 @@ export default function UpdateProgressPage() {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-xl font-semibold placeholder-gray-500 bg-white"
+              style={{ color: '#000000 !important' }}
+              placeholder="Ingrese la contraseña"
             />
           </div>
           <div>
@@ -51,7 +75,9 @@ export default function UpdateProgressPage() {
               id="currentRaised"
               value={currentRaised}
               onChange={(e) => setCurrentRaised(e.target.value)}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 text-xl font-semibold placeholder-gray-500 bg-white"
+              style={{ color: '#000000 !important' }}
+              placeholder="Ingrese la cantidad recaudada"
             />
           </div>
           <button

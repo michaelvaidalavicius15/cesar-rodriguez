@@ -28,7 +28,6 @@ export default function HomePage() {
       <ProgressSection currentRaised={currentRaised} goalAmount={goalAmount} />
       <StorySection sections={texts.sections} />
       <DonationSection texts={texts} language={language} />
-      <CallToAction texts={texts} />
     </div>
   );
 }
