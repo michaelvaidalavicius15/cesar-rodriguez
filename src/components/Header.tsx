@@ -14,7 +14,7 @@ export default function Header() {
       <div className="header-improved">
         <div className="container mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4 animate-slideInLeft">
+            <a className="flex items-center space-x-4 animate-slideInLeft" href='/'>
               <div className="relative">
                 <div className="absolute inset-0 bg-highlight/30 rounded-full blur-lg animate-pulse"></div>
                 <Heart className="relative h-10 w-10 text-error animate-heartbeat drop-shadow-lg" />
@@ -27,7 +27,7 @@ export default function Header() {
                   {language === 'es' ? 'Campaña de Esperanza' : 'Campanha de Esperança'}
                 </p>
               </div>
-            </div>
+            </a>
             
             <div className="flex items-center space-x-6 animate-slideInRight">
               <div className="hidden sm:flex items-center space-x-2 text-sm badge-improved px-4 py-2 rounded-full hover-lift">
