@@ -7,9 +7,70 @@ import { DonationCard } from '@/components/DonationCard';
 import { ProgressBar } from '@/components/ProgressBar';
 import textsData from '@/data/texts.json';
 
-type Language = keyof typeof textsData;
-type Texts = (typeof textsData)[Language];
+interface UruguayBankInfo {
+  title: string;
+  bank: string;
+  accountNumber: string;
+  accountHolder: string;
+  accountType: string;
+  ci: string;
+}
 
+interface BrazilBankInfo {
+  title: string;
+  bank: string;
+  agency: string;
+  accountNumber: string;
+  accountHolder: string;
+  accountType: string;
+  cpf: string;
+}
+
+interface OtherBankInfo {
+  title: string;
+  bank: string;
+  swift: string;
+  accountNumber: string;
+  accountHolder: string;
+  address: string;
+}
+
+interface EsBankInfo {
+  uruguay: UruguayBankInfo;
+  other: OtherBankInfo;
+}
+
+interface PtBankInfo {
+  brazil: BrazilBankInfo;
+  other: OtherBankInfo;
+}
+
+interface Texts {
+  title: string;
+  name: string;
+  age: string;
+  goalAmount: string;
+  sections: {
+    intro: { title: string; content: string };
+    story: { title: string; content: string };
+    treatment: { title: string; content: string };
+    why: { title: string; content: string };
+    impact: { title: string; content: string };
+    howToHelp: { title: string; content: string };
+  };
+  bankInfo: EsBankInfo | PtBankInfo;
+  buttons: {
+    donate: string;
+    share: string;
+    learnMore: string;
+  };
+  footer: {
+    gratitude: string;
+    signature: string;
+  };
+}
+
+type Language = 'es' | 'pt';
 export default function HomePage() {
   const { language, isBrazil, isUruguay } = useCountryDetection();
   const texts: Texts = textsData[language as Language];
@@ -34,14 +95,14 @@ export default function HomePage() {
   };
 
   const getBankInfo = () => {
-    if (isBrazil) {
-      return texts.bankInfo.brazil;
-    } else if (isUruguay) {
-      return texts.bankInfo.uruguay;
-    } else {
-      return texts.bankInfo.other;
-    }
-  };
+  if (language === 'pt' && isBrazil) {
+    return (texts.bankInfo as PtBankInfo).brazil;
+  } else if (isUruguay && 'uruguay' in texts.bankInfo) {
+    return (texts.bankInfo as EsBankInfo).uruguay;
+  } else {
+    return texts.bankInfo.other;
+  }
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
