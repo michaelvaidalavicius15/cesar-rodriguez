@@ -9,7 +9,6 @@ interface BankInfo {
   accountType?: string;
   swift?: string;
   agency?: string;
-  ci?: string;
   cpf?: string;
   address?: string;
 }
@@ -19,9 +18,9 @@ interface DonationCardProps {
   isInternational?: boolean;
 }
 
-export const DonationCard: React.FC<DonationCardProps> = ({ 
-  bankInfo, 
-  isInternational = false 
+export const DonationCard: React.FC<DonationCardProps> = ({
+  bankInfo,
+  isInternational = false,
 }) => {
   const [copiedField, setCopiedField] = useState<string>('');
 
@@ -59,7 +58,6 @@ export const DonationCard: React.FC<DonationCardProps> = ({
           </span>
         )}
       </h3>
-      
       <div className="space-y-3">
         <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
           <div>
@@ -68,7 +66,6 @@ export const DonationCard: React.FC<DonationCardProps> = ({
           </div>
           <CopyButton text={bankInfo.bank} fieldName="bank" />
         </div>
-
         {bankInfo.agency && (
           <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
             <div>
@@ -78,7 +75,6 @@ export const DonationCard: React.FC<DonationCardProps> = ({
             <CopyButton text={bankInfo.agency} fieldName="agency" />
           </div>
         )}
-
         {bankInfo.accountNumber && (
           <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
             <div>
@@ -88,7 +84,6 @@ export const DonationCard: React.FC<DonationCardProps> = ({
             <CopyButton text={bankInfo.accountNumber} fieldName="account" />
           </div>
         )}
-
         <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
           <div>
             <p className="text-sm text-gray-600">Titular</p>
@@ -96,7 +91,6 @@ export const DonationCard: React.FC<DonationCardProps> = ({
           </div>
           <CopyButton text={bankInfo.accountHolder} fieldName="holder" />
         </div>
-
         {bankInfo.accountType && (
           <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
             <div>
@@ -106,7 +100,6 @@ export const DonationCard: React.FC<DonationCardProps> = ({
             <CopyButton text={bankInfo.accountType} fieldName="type" />
           </div>
         )}
-
         {bankInfo.swift && (
           <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
             <div>
@@ -116,17 +109,6 @@ export const DonationCard: React.FC<DonationCardProps> = ({
             <CopyButton text={bankInfo.swift} fieldName="swift" />
           </div>
         )}
-
-        {bankInfo.ci && (
-          <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-            <div>
-              <p className="text-sm text-gray-600">C.I.</p>
-              <p className="font-semibold text-gray-800">{bankInfo.ci}</p>
-            </div>
-            <CopyButton text={bankInfo.ci} fieldName="ci" />
-          </div>
-        )}
-
         {bankInfo.cpf && (
           <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
             <div>
@@ -136,7 +118,6 @@ export const DonationCard: React.FC<DonationCardProps> = ({
             <CopyButton text={bankInfo.cpf} fieldName="cpf" />
           </div>
         )}
-
         {bankInfo.address && (
           <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
             <div>

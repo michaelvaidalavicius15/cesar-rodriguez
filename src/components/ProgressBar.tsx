@@ -6,13 +6,13 @@ interface ProgressBarProps {
   currency?: string;
 }
 
-export const ProgressBar: React.FC<ProgressBarProps> = ({ 
-  currentAmount, 
-  goalAmount, 
-  currency = 'USD' 
+export const ProgressBar: React.FC<ProgressBarProps> = ({
+  currentAmount,
+  goalAmount,
+  currency = 'USD',
 }) => {
   const percentage = Math.min((currentAmount / goalAmount) * 100, 100);
-  
+
   const formatAmount = (amount: number) => {
     return new Intl.NumberFormat('es-ES', {
       style: 'currency',
@@ -29,9 +29,8 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
           <h3 className="text-lg font-semibold text-gray-800">Progreso de donaciones</h3>
           <span className="text-sm text-gray-600">{percentage.toFixed(1)}%</span>
         </div>
-        
         <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-          <div 
+          <div
             className="bg-gradient-to-r from-blue-500 to-purple-600 h-full rounded-full transition-all duration-1000 ease-out"
             style={{ width: `${percentage}%` }}
           >
@@ -39,7 +38,6 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
           </div>
         </div>
       </div>
-      
       <div className="flex justify-between items-center text-sm">
         <div>
           <p className="text-gray-600">Recaudado</p>
@@ -50,7 +48,6 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
           <p className="text-xl font-semibold text-gray-800">{formatAmount(goalAmount)}</p>
         </div>
       </div>
-      
       <div className="mt-4 text-center">
         <p className="text-gray-600">
           Faltan <span className="font-semibold text-red-600">{formatAmount(goalAmount - currentAmount)}</span> para alcanzar el objetivo

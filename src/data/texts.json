@@ -19,7 +19,7 @@
       },
       "why": {
         "title": "¿Por qué necesito tu ayuda?",
-        "content": "El costo de esta cirugía y de los procedimientos solicitados, como el implante del generador para neuroestimulación y otros elementos quirúrgicos, es una carga financiera que no puedo afrontar por mi cuenta. Necesito recaudar fondos para cubrir los gastos médicos y la rehabilitación posterior, que son cruciales para mi recuperación completa."
+        "content": "El costo de esta cirugía y de los procedimientos solicitados, como el implante del generador para neuroestimulación y otros elementos quirúrgicos, es una carga financiera que no puedo afrontar por mi cuenta. Necesito recaudar 30,000 USD para iniciar el tratamiento con esta cirugía, que incluye los costos médicos y la rehabilitación posterior, cruciales para mi recuperación completa."
       },
       "impact": {
         "title": "Tu impacto",
@@ -36,8 +36,16 @@
         "bank": "Banco República Oriental del Uruguay (BROU)",
         "accountNumber": "001-123456-78",
         "accountHolder": "Cesar Maicol Rodriguez Salvia",
-        "accountType": "Caja de Ahorro",
-        "ci": "1.234.567-8"
+        "accountType": "Caja de Ahorro"
+      },
+      "brazil": {
+        "title": "Donaciones desde Brasil",
+        "bank": "Banco do Brasil",
+        "agency": "1234-5",
+        "accountNumber": "12345678-9",
+        "accountHolder": "Cesar Maicol Rodriguez Salvia",
+        "accountType": "Conta Corrente",
+        "cpf": "123.456.789-00"
       },
       "other": {
         "title": "Donaciones internacionales",
@@ -78,7 +86,7 @@
       },
       "why": {
         "title": "Por que preciso da sua ajuda?",
-        "content": "O custo desta cirurgia e dos procedimentos solicitados, como o implante do gerador para neuroestimulação e outros elementos cirúrgicos, é uma carga financeira que não posso enfrentar sozinho. Preciso arrecadar fundos para cobrir os gastos médicos e a reabilitação posterior, que são cruciais para minha recuperação completa."
+        "content": "O custo desta cirurgia e dos procedimentos solicitados, como o implante do gerador para neuroestimulação e outros elementos cirúrgicos, é uma carga financeira que não posso enfrentar sozinho. Preciso arrecadar 30.000 USD para iniciar o tratamento com esta cirurgia, que inclui os custos médicos e a reabilitação posterior, cruciais para minha recuperação completa."
       },
       "impact": {
         "title": "Seu impacto",
@@ -98,6 +106,13 @@
         "accountHolder": "Cesar Maicol Rodriguez Salvia",
         "accountType": "Conta Corrente",
         "cpf": "123.456.789-00"
+      },
+      "uruguay": {
+        "title": "Doações do Uruguai",
+        "bank": "Banco República Oriental del Uruguay (BROU)",
+        "accountNumber": "001-123456-78",
+        "accountHolder": "Cesar Maicol Rodriguez Salvia",
+        "accountType": "Caja de Ahorro"
       },
       "other": {
         "title": "Doações internacionais",

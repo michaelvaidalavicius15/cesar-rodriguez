@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { LanguageProvider } from '@/components/LanguageProvider';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -36,7 +39,13 @@ export default function RootLayout({
         <meta name="theme-color" content="#3b82f6" />
       </head>
       <body className={inter.className}>
-        {children}
+        <LanguageProvider>
+          <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );
