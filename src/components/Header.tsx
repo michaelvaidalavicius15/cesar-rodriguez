@@ -20,7 +20,7 @@ export default function Header() {
                 <Heart className="relative h-10 w-10 text-error animate-heartbeat drop-shadow-lg" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-high-contrast bg-gradient-to-r from-primary via-accent to-highlight bg-clip-text text-transparent animate-glow">
+                <h1 className="text-2xl font-bold text-high-contrast">
                   {language === 'es' ? 'Ayuda para Cesar' : 'Ajuda para Cesar'}
                 </h1>
                 <p className="text-sm text-medium-contrast font-medium animate-fadeInUp">

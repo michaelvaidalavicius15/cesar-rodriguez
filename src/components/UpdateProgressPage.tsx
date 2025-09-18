@@ -27,7 +27,7 @@ export default function UpdateProgressPage() {
       'El progreso se reflejará inmediatamente en la página principal',
       'Use números decimales para centavos (ej: 150.50)',
     ],
-    securityNotice: '🔒 Panel seguro - Solo para administradores autorizados',
+    securityNotice: 'Panel seguro - Solo para administradores autorizados',
     incorrectPassword: 'Contraseña incorrecta',
     invalidAmount: 'Por favor, ingrese una cantidad válida',
     successMessage: 'Progreso actualizado correctamente',
@@ -69,28 +69,28 @@ export default function UpdateProgressPage() {
   };
 
   return (
-    <div className="min-h-screen py-16 px-4 relative bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
-      {/* Orbes de fondo mejorados */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-200/30 via-purple-200/20 to-transparent rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-56 h-56 bg-gradient-to-r from-purple-200/25 via-blue-200/15 to-transparent rounded-full blur-2xl animate-float animation-delay-300"></div>
+    <div className="min-h-screen py-16 px-4 hero-bg-improved">
+      {/* Orbes de fondo sutiles */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-200/20 via-purple-200/10 to-transparent rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-20 right-10 w-56 h-56 bg-gradient-to-r from-purple-200/15 via-blue-200/10 to-transparent rounded-full blur-2xl animate-float animation-delay-300"></div>
       
       <div className="relative z-10 container mx-auto max-w-md">
         {/* Panel de administración */}
-        <div className="glass-admin rounded-2xl p-8 shadow-xl animate-fadeInUp">
-          {/* Header mejorado */}
+        <div className="card-high-contrast rounded-2xl p-8 shadow-xl animate-fadeInUp">
+          {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 shadow-lg animate-glow">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 shadow-lg">
               <Shield className="h-8 w-8 text-white drop-shadow-sm" />
             </div>
-            <h1 className="text-3xl font-bold text-primary mb-2">{translations.title}</h1>
-            <p className="text-secondary text-lg">{translations.subtitle}</p>
+            <h1 className="text-3xl font-bold text-high-contrast mb-2">{translations.title}</h1>
+            <p className="text-medium-contrast text-lg">{translations.subtitle}</p>
           </div>
 
-          {/* Formulario mejorado */}
-          <div className="space-y-7">
+          {/* Formulario */}
+          <form onSubmit={handleSubmit} className="space-y-7">
             {/* Campo de contraseña */}
             <div className="space-y-3">
-              <label htmlFor="password" className="block text-base font-semibold text-primary flex items-center">
+              <label htmlFor="password" className="block text-base font-semibold text-high-contrast flex items-center">
                 <Lock className="h-5 w-5 mr-2 text-blue-500" />
                 {translations.passwordLabel}
               </label>
@@ -100,9 +100,14 @@ export default function UpdateProgressPage() {
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-12 pr-12 py-3 text-base rounded-xl shadow-sm"
+                  className="w-full pl-12 pr-12 py-3 text-base rounded-xl border-2 border-blue-200 bg-white text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-4 focus:ring-blue-200 transition-all duration-200 shadow-sm"
                   placeholder={translations.passwordPlaceholder}
                   required
+                  style={{
+                    background: 'white !important',
+                    color: '#111827 !important',
+                    fontWeight: '600'
+                  }}
                 />
                 <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-slate-400" />
                 <button
@@ -117,7 +122,7 @@ export default function UpdateProgressPage() {
 
             {/* Campo de cantidad */}
             <div className="space-y-3">
-              <label htmlFor="currentRaised" className="block text-base font-semibold text-primary flex items-center">
+              <label htmlFor="currentRaised" className="block text-base font-semibold text-high-contrast flex items-center">
                 <DollarSign className="h-5 w-5 mr-2 text-green-500" />
                 {translations.amountLabel}
               </label>
@@ -127,21 +132,25 @@ export default function UpdateProgressPage() {
                   id="currentRaised"
                   value={currentRaised}
                   onChange={(e) => setCurrentRaised(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 text-base rounded-xl shadow-sm"
+                  className="w-full pl-12 pr-4 py-3 text-base rounded-xl border-2 border-blue-200 bg-white text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-4 focus:ring-blue-200 transition-all duration-200 shadow-sm"
                   placeholder={translations.amountPlaceholder}
                   min="0"
                   step="0.01"
                   required
+                  style={{
+                    background: 'white !important',
+                    color: '#111827 !important',
+                    fontWeight: '600'
+                  }}
                 />
                 <DollarSign className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-slate-400" />
               </div>
             </div>
 
-            {/* Botón de envío mejorado */}
+            {/* Botón de envío */}
             <button
               type="submit"
               disabled={isLoading}
-              onClick={handleSubmit}
               className="w-full btn-gradient px-6 py-4 rounded-xl text-lg font-semibold hover:scale-105 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center space-x-3 shadow-lg"
             >
               {isLoading ? (
@@ -156,9 +165,9 @@ export default function UpdateProgressPage() {
                 </>
               )}
             </button>
-          </div>
+          </form>
 
-          {/* Mensaje de respuesta mejorado */}
+          {/* Mensaje de respuesta */}
           {message && (
             <div className={`mt-8 p-4 rounded-xl flex items-center space-x-3 transition-all duration-300 animate-fadeInUp shadow-sm ${
               isSuccess 
@@ -174,8 +183,8 @@ export default function UpdateProgressPage() {
             </div>
           )}
 
-          {/* Card de instrucciones mejorada */}
-          <div className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 shadow-sm">
+          {/* Card de instrucciones */}
+          <div className="mt-8 bg-blue-50 p-6 rounded-xl border border-blue-200 shadow-sm">
             <h3 className="font-bold text-blue-800 mb-4 text-lg flex items-center">
               <Shield className="h-5 w-5 mr-2" />
               {translations.instructionsTitle}
@@ -190,9 +199,12 @@ export default function UpdateProgressPage() {
             </ul>
           </div>
 
-          {/* Aviso de seguridad mejorado */}
+          {/* Aviso de seguridad */}
           <div className="mt-6 text-center">
-            <p className="text-muted text-sm font-medium">{translations.securityNotice}</p>
+            <p className="text-medium-contrast text-sm font-medium flex items-center justify-center">
+              <Lock className="h-4 w-4 mr-2" />
+              {translations.securityNotice}
+            </p>
           </div>
         </div>
       </div>
