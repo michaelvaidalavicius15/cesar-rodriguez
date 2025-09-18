@@ -1,15 +1,15 @@
-import { put, get } from '@vercel/blob';
+import { put, list } from '@vercel/blob';
 import { NextResponse } from 'next/server';
 
 const BLOB_PATH = 'progress.json';
 
 export async function GET() {
   try {
-    const { blobs } = await get(BLOB_PATH, { all: true });
-    if (blobs.length === 0) {
+    const blobsResult = await list({ prefix: BLOB_PATH });
+    if (blobsResult.blobs.length === 0) {
       return NextResponse.json({ currentRaised: 0 });
     }
-    const latestBlob = blobs[0];
+    const latestBlob = blobsResult.blobs[0];
     const response = await fetch(latestBlob.url);
     const data = await response.json();
     return NextResponse.json(data);
