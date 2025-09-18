@@ -1,0 +1,121 @@
+{
+  "es": {
+    "title": "Ayúdame a recuperar mi vida y a caminar de nuevo",
+    "name": "Cesar Maicol Rodriguez Salvia",
+    "age": "27 años",
+    "goalAmount": "30,000 USD",
+    "sections": {
+      "intro": {
+        "title": "Mi petición de ayuda",
+        "content": "Hola a todos. Mi nombre es Cesar Maicol Rodriguez Salvia, y me dirijo a ustedes con una petición de ayuda. Tengo 27 años actualmente, y mi vida dio un giro drástico a los 21, cuando sufrí una lesión medular alta e incompleta causada por un proyectil de arma de fuego en mi columna cervical. Esta lesión me ha dejado con un dolor crónico insoportable y la pérdida de la función motora en mi cuerpo."
+      },
+      "story": {
+        "title": "Mi historia",
+        "content": "Hace 6 años, mi vida cambió. La lesión medular provocó una condición de cervical y un severo dolor neuropático. A pesar de una laminectomía, la resonancia magnética muestra mielomalacia (daño en la médula) a nivel C6-C7 y una inversión de la lordosis cervical. La tomografía computarizada confirma espondilosis y un complejo disco-osteofitario difuso en C5-C6 y C6-C7 que comprime el saco dural y la raíz nerviosa C7."
+      },
+      "treatment": {
+        "title": "El tratamiento que necesito",
+        "content": "Los médicos han determinado que la mejor opción para mí es la implantación de un neuroestimulador. Con una lesión incompleta como la mía, las posibilidades de recuperación con el tratamiento correcto son muy altas. Este dispositivo, a través de impulsos eléctricos, bloqueará las señales de dolor que mi cerebro recibe y, lo más importante, me ayudará a recuperar la función motora. Esta cirugía y los procedimientos adicionales, como la artrodesis, son mi única esperanza para dejar de vivir con dolor y recuperar la autonomía que perdí."
+      },
+      "why": {
+        "title": "¿Por qué necesito tu ayuda?",
+        "content": "El costo de esta cirugía y de los procedimientos solicitados, como el implante del generador para neuroestimulación y otros elementos quirúrgicos, es una carga financiera que no puedo afrontar por mi cuenta. Necesito recaudar fondos para cubrir los gastos médicos y la rehabilitación posterior, que son cruciales para mi recuperación completa."
+      },
+      "impact": {
+        "title": "Tu impacto",
+        "content": "Cada donación, por pequeña que sea, me acerca un paso más a una vida sin dolor. Me acerca a la posibilidad de volver a caminar, a recuperar mi independencia y a reconstruir mi futuro. Tu apoyo no es solo una ayuda financiera; es un acto de fe y esperanza que me da la fuerza para seguir luchando."
+      },
+      "howToHelp": {
+        "title": "¿Cómo puedes ayudar?",
+        "content": "Puedes contribuir a esta causa haciendo una donación usando los datos bancarios de tu país. Si no puedes donar, te pido que por favor compartas mi historia con tus amigos, familiares y en tus redes sociales. Cada vez que compartes, me das la oportunidad de llegar a más personas que puedan ayudar."
+      }
+    },
+    "bankInfo": {
+      "uruguay": {
+        "title": "Donaciones desde Uruguay",
+        "bank": "Banco República Oriental del Uruguay (BROU)",
+        "accountNumber": "001-123456-78",
+        "accountHolder": "Cesar Maicol Rodriguez Salvia",
+        "accountType": "Caja de Ahorro",
+        "ci": "1.234.567-8"
+      },
+      "other": {
+        "title": "Donaciones internacionales",
+        "bank": "Banco Santander Uruguay",
+        "swift": "BSCHUYMP",
+        "accountNumber": "USD-456789012",
+        "accountHolder": "Cesar Maicol Rodriguez Salvia",
+        "address": "Montevideo, Uruguay"
+      }
+    },
+    "buttons": {
+      "donate": "Donar ahora",
+      "share": "Compartir historia",
+      "learnMore": "Más información"
+    },
+    "footer": {
+      "gratitude": "Gracias por tomarte el tiempo de leer mi historia. No tengo palabras para expresar mi gratitud por cualquier tipo de apoyo que me brindes.",
+      "signature": "Con esperanza y gratitud, Cesar Maicol Rodriguez Salvia"
+    }
+  },
+  "pt": {
+    "title": "Me ajude a recuperar minha vida e a caminhar novamente",
+    "name": "Cesar Maicol Rodriguez Salvia",
+    "age": "27 anos",
+    "goalAmount": "30.000 USD",
+    "sections": {
+      "intro": {
+        "title": "Meu pedido de ajuda",
+        "content": "Olá a todos. Meu nome é Cesar Maicol Rodriguez Salvia, e me dirijo a vocês com um pedido de ajuda. Tenho 27 anos atualmente, e minha vida mudou drasticamente aos 21, quando sofri uma lesão medular alta e incompleta causada por um projétil de arma de fogo na minha coluna cervical. Esta lesão me deixou com dor crônica insuportável e a perda da função motora no meu corpo."
+      },
+      "story": {
+        "title": "Minha história",
+        "content": "Há 6 anos, minha vida mudou. A lesão medular provocou uma condição cervical e uma dor neuropática severa. Apesar de uma laminectomia, a ressonância magnética mostra mielomalácia (dano na medula) ao nível C6-C7 e uma inversão da lordose cervical. A tomografia computadorizada confirma espondilite e um complexo disco-osteofitário difuso em C5-C6 e C6-C7 que comprime o saco dural e a raiz nervosa C7."
+      },
+      "treatment": {
+        "title": "O tratamento que preciso",
+        "content": "Os médicos determinaram que a melhor opção para mim é a implantação de um neuroestimulador. Com uma lesão incompleta como a minha, as possibilidades de recuperação com o tratamento correto são muito altas. Este dispositivo, através de impulsos elétricos, bloqueará os sinais de dor que meu cérebro recebe e, o mais importante, me ajudará a recuperar a função motora. Esta cirurgia e os procedimentos adicionais, como a artrodese, são minha única esperança para deixar de viver com dor e recuperar a autonomia que perdi."
+      },
+      "why": {
+        "title": "Por que preciso da sua ajuda?",
+        "content": "O custo desta cirurgia e dos procedimentos solicitados, como o implante do gerador para neuroestimulação e outros elementos cirúrgicos, é uma carga financeira que não posso enfrentar sozinho. Preciso arrecadar fundos para cobrir os gastos médicos e a reabilitação posterior, que são cruciais para minha recuperação completa."
+      },
+      "impact": {
+        "title": "Seu impacto",
+        "content": "Cada doação, por menor que seja, me aproxima um passo mais de uma vida sem dor. Me aproxima da possibilidade de voltar a caminhar, de recuperar minha independência e de reconstruir meu futuro. Seu apoio não é apenas uma ajuda financeira; é um ato de fé e esperança que me dá a força para continuar lutando."
+      },
+      "howToHelp": {
+        "title": "Como você pode ajudar?",
+        "content": "Você pode contribuir para esta causa fazendo uma doação usando os dados bancários do seu país. Se não puder doar, peço que compartilhe minha história com seus amigos, familiares e nas suas redes sociais. Cada vez que compartilha, me dá a oportunidade de chegar a mais pessoas que possam ajudar."
+      }
+    },
+    "bankInfo": {
+      "brazil": {
+        "title": "Doações do Brasil",
+        "bank": "Banco do Brasil",
+        "agency": "1234-5",
+        "accountNumber": "12345678-9",
+        "accountHolder": "Cesar Maicol Rodriguez Salvia",
+        "accountType": "Conta Corrente",
+        "cpf": "123.456.789-00"
+      },
+      "other": {
+        "title": "Doações internacionais",
+        "bank": "Banco Santander Uruguay",
+        "swift": "BSCHUYMP",
+        "accountNumber": "USD-456789012",
+        "accountHolder": "Cesar Maicol Rodriguez Salvia",
+        "address": "Montevideo, Uruguay"
+      }
+    },
+    "buttons": {
+      "donate": "Doar agora",
+      "share": "Compartilhar história",
+      "learnMore": "Mais informações"
+    },
+    "footer": {
+      "gratitude": "Obrigado por dedicar seu tempo para ler minha história. Não tenho palavras para expressar minha gratidão por qualquer tipo de apoio que me ofereçam.",
+      "signature": "Com esperança e gratidão, Cesar Maicol Rodriguez Salvia"
+    }
+  }
+}
