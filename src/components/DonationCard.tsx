@@ -1,5 +1,6 @@
+// DonationCard.tsx - Enhanced version
 import React, { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
+import { Copy, Check, CreditCard } from 'lucide-react';
 
 interface BankInfo {
   title: string;
@@ -37,95 +38,51 @@ export const DonationCard: React.FC<DonationCardProps> = ({
   const CopyButton: React.FC<{ text: string; fieldName: string }> = ({ text, fieldName }) => (
     <button
       onClick={() => copyToClipboard(text, fieldName)}
-      className="ml-2 p-1 hover:bg-gray-100 rounded-md transition-colors"
+      className="p-2 hover:bg-white/20 rounded-lg transition-all duration-300 group"
       title="Copiar"
     >
       {copiedField === fieldName ? (
-        <Check className="h-4 w-4 text-green-600" />
+        <Check className="h-4 w-4 text-green-400" />
       ) : (
-        <Copy className="h-4 w-4 text-gray-600" />
+        <Copy className="h-4 w-4 text-gray-500 group-hover:text-blue-400" />
       )}
     </button>
   );
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-      <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-        {bankInfo.title}
+    <div className="glass-strong rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 hover:scale-105 group animate-fadeInUp">
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-xl font-bold text-gray-800 flex items-center">
+          <CreditCard className="h-6 w-6 mr-2 text-blue-600" />
+          {bankInfo.title}
+        </h3>
         {isInternational && (
-          <span className="ml-2 px-2 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">
+          <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-semibold rounded-full">
             Internacional
           </span>
         )}
-      </h3>
+      </div>
+
       <div className="space-y-3">
-        <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-          <div>
-            <p className="text-sm text-gray-600">Banco</p>
-            <p className="font-semibold text-gray-800">{bankInfo.bank}</p>
-          </div>
-          <CopyButton text={bankInfo.bank} fieldName="bank" />
-        </div>
-        {bankInfo.agency && (
-          <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-            <div>
-              <p className="text-sm text-gray-600">Agencia</p>
-              <p className="font-semibold text-gray-800">{bankInfo.agency}</p>
+        {[
+          { label: 'Banco', value: bankInfo.bank, field: 'bank' },
+          { label: 'Agencia', value: bankInfo.agency, field: 'agency' },
+          { label: 'Número de Cuenta', value: bankInfo.accountNumber, field: 'account' },
+          { label: 'Titular', value: bankInfo.accountHolder, field: 'holder' },
+          { label: 'Tipo de Cuenta', value: bankInfo.accountType, field: 'type' },
+          { label: 'SWIFT', value: bankInfo.swift, field: 'swift' },
+          { label: 'CPF', value: bankInfo.cpf, field: 'cpf' },
+          { label: 'Dirección', value: bankInfo.address, field: 'address' },
+        ].map((item, index) => 
+          item.value ? (
+            <div key={item.field} className="flex items-center justify-between bg-white/30 p-4 rounded-xl backdrop-blur-sm group-hover:bg-white/40 transition-all duration-300">
+              <div className="flex-1">
+                <p className="text-sm text-gray-600 font-medium">{item.label}</p>
+                <p className="font-semibold text-gray-800 mt-1">{item.value}</p>
+              </div>
+              <CopyButton text={item.value} fieldName={item.field} />
             </div>
-            <CopyButton text={bankInfo.agency} fieldName="agency" />
-          </div>
-        )}
-        {bankInfo.accountNumber && (
-          <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-            <div>
-              <p className="text-sm text-gray-600">Número de Cuenta</p>
-              <p className="font-semibold text-gray-800">{bankInfo.accountNumber}</p>
-            </div>
-            <CopyButton text={bankInfo.accountNumber} fieldName="account" />
-          </div>
-        )}
-        <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-          <div>
-            <p className="text-sm text-gray-600">Titular</p>
-            <p className="font-semibold text-gray-800">{bankInfo.accountHolder}</p>
-          </div>
-          <CopyButton text={bankInfo.accountHolder} fieldName="holder" />
-        </div>
-        {bankInfo.accountType && (
-          <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-            <div>
-              <p className="text-sm text-gray-600">Tipo de Cuenta</p>
-              <p className="font-semibold text-gray-800">{bankInfo.accountType}</p>
-            </div>
-            <CopyButton text={bankInfo.accountType} fieldName="type" />
-          </div>
-        )}
-        {bankInfo.swift && (
-          <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-            <div>
-              <p className="text-sm text-gray-600">SWIFT</p>
-              <p className="font-semibold text-gray-800">{bankInfo.swift}</p>
-            </div>
-            <CopyButton text={bankInfo.swift} fieldName="swift" />
-          </div>
-        )}
-        {bankInfo.cpf && (
-          <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-            <div>
-              <p className="text-sm text-gray-600">CPF</p>
-              <p className="font-semibold text-gray-800">{bankInfo.cpf}</p>
-            </div>
-            <CopyButton text={bankInfo.cpf} fieldName="cpf" />
-          </div>
-        )}
-        {bankInfo.address && (
-          <div className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-            <div>
-              <p className="text-sm text-gray-600">Dirección</p>
-              <p className="font-semibold text-gray-800">{bankInfo.address}</p>
-            </div>
-            <CopyButton text={bankInfo.address} fieldName="address" />
-          </div>
+          ) : null
         )}
       </div>
     </div>

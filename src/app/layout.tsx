@@ -1,3 +1,4 @@
+// layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -40,10 +41,18 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <LanguageProvider>
-          <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-            <Header />
-            {children}
-            <Footer />
+          <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 z-0">
+              <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+              <div className="absolute top-40 right-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-2000"></div>
+              <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-4000"></div>
+            </div>
+            <div className="relative z-10">
+              <Header />
+              {children}
+              <Footer />
+            </div>
           </div>
         </LanguageProvider>
       </body>

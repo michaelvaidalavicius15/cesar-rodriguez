@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, Globe } from 'lucide-react';
+import Image from 'next/image';
 
 interface HeroSectionProps {
   texts: any;
@@ -23,12 +24,15 @@ export default function HeroSection({ texts }: HeroSectionProps) {
         </div>
       </div>
       <div className="max-w-md mx-auto mb-8">
-        <div className="bg-gray-200 rounded-xl h-64 flex items-center justify-center border-2 border-dashed border-gray-300">
-          <div className="text-center text-gray-500">
-            <div className="text-4xl mb-2">📷</div>
-            <p className="text-sm">Foto de Cesar</p>
-            <p className="text-xs">(Insertar imagen aquí)</p>
-          </div>
+        <div className="relative bg-gray-200 rounded-xl overflow-hidden border-2 border-dashed border-gray-300">
+          <Image
+            src="/cesar.jpg"
+            alt="Foto de Cesar"
+            width={200}
+            height={300}
+            className="object-contain w-full h-auto"
+            priority
+          />
         </div>
       </div>
     </div>
