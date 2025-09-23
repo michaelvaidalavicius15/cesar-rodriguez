@@ -12,19 +12,24 @@ export const metadata: Metadata = {
   description: 'Ayuda a Cesar Maicol Rodriguez Salvia a recaudar fondos para su cirugía de neuroestimulación. Con tu apoyo puede recuperar la movilidad y vivir sin dolor.',
   keywords: 'donaciones, ayuda médica, neuroestimulación, lesión medular, Uruguay, crowdfunding',
   authors: [{ name: 'Cesar Maicol Rodriguez Salvia' }],
+  viewport: 'width=device-width, initial-scale=1',
+  themeColor: '#3b82f6',
   openGraph: {
     title: 'Ayuda para Cesar - Recuperar mi vida y caminar de nuevo',
-    description: 'Ayuda a Cesar a recaudar fondos para su cirugía de neuroestimulación.',
-    url: 'https://tupagina.com', // Replace with your actual domain
+    description: 'Ayuda a Cesar a recaudar fondos para su cirugía de neuroestimulación. ¡Con tu apoyo, puede volver a caminar!',
+    url: 'https://tudominio.com', // Reemplaza con tu dominio real
+    siteName: 'Ayuda para Cesar',
     type: 'website',
     locale: 'es_UY',
     alternateLocale: 'pt_BR',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: 'https://unidos-por-cesar.vercel.app//og-image.jpg', // Usa URL absoluta
+        secureUrl: 'https://unidos-por-cesar.vercel.app//og-image.jpg',
         width: 1200,
         height: 1200,
         alt: 'Apoya a Cesar Maicol Rodriguez Salvia para recuperar su movilidad',
+        type: 'image/jpeg', // Cambia a 'image/png' si usas PNG
       },
     ],
   },
@@ -32,11 +37,17 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ayuda para Cesar - Recuperar mi vida y caminar de nuevo',
     description: 'Ayuda a Cesar a recaudar fondos para su cirugía de neuroestimulación.',
-    images: ['/images/og-image.jpg'], // Twitter uses this for the card image
+    images: ['https://unidos-por-cesar.vercel.app//og-image.jpg'], // URL absoluta
   },
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico',
+  },
+  // Metaetiquetas adicionales para LinkedIn y otras plataformas
+  other: {
+    'msapplication-TileImage': '/ms-icon.png', // Para Windows Tiles (opcional, 144x144)
+    'og:image:secure_url': 'https://unidos-por-cesar.vercel.app//og-image.jpg', // Compatibilidad adicional
   },
 };
 
