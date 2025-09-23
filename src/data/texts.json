@@ -39,11 +39,8 @@
         "accountType": "Internacional"
       },
       "brazil": {
-        "title": "Donaciones desde Brasil",
-        "bank": "Pendiente - Necesita datos bancarios completos",
         "accountHolder": "Cesar Maicol Rodriguez Salvia",
-        "cpf": "801.650.809-06",
-        "accountType": "Pendiente"
+        "cpf": "801.650.809-06"
       },
       "other": {
         "title": "Donaciones internacionales",
@@ -97,11 +94,8 @@
     },
     "bankInfo": {
       "brazil": {
-        "title": "Doações do Brasil",
-        "bank": "Pendiente - Precisa dados bancários completos",
         "accountHolder": "Cesar Maicol Rodriguez Salvia",
-        "cpf": "801.650.809-06",
-        "accountType": "A completar com banco e conta"
+        "cpf": "801.650.809-06"
       },
       "uruguay": {
         "title": "Doações do Uruguai",
