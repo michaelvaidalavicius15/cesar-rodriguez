@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ayuda para Cesar - Recuperar mi vida y caminar de nuevo',
     description: 'Ayuda a Cesar a recaudar fondos para su cirugía de neuroestimulación. ¡Con tu apoyo, puede volver a caminar!',
-    url: 'https://tudominio.com', // Reemplaza con tu dominio real
+    url: 'https://unidos-por-cesar.vercel.app/', // Reemplaza con tu dominio real
     siteName: 'Ayuda para Cesar',
     type: 'website',
     locale: 'es_UY',
     alternateLocale: 'pt_BR',
     images: [
       {
-        url: 'https://unidos-por-cesar.vercel.app//og-image.jpg', // Usa URL absoluta
-        secureUrl: 'https://unidos-por-cesar.vercel.app//og-image.jpg',
+        url: 'https://unidos-por-cesar.vercel.app/og-image.jpg', // Usa URL absoluta
+        secureUrl: 'https://unidos-por-cesar.vercel.app/og-image.jpg',
         width: 1200,
         height: 1200,
         alt: 'Apoya a Cesar Maicol Rodriguez Salvia para recuperar su movilidad',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ayuda para Cesar - Recuperar mi vida y caminar de nuevo',
     description: 'Ayuda a Cesar a recaudar fondos para su cirugía de neuroestimulación.',
-    images: ['https://unidos-por-cesar.vercel.app//og-image.jpg'], // URL absoluta
+    images: ['https://unidos-por-cesar.vercel.app/og-image.jpg'], // URL absoluta
   },
   icons: {
     icon: '/favicon.ico',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   // Metaetiquetas adicionales para LinkedIn y otras plataformas
   other: {
     'msapplication-TileImage': '/ms-icon.png', // Para Windows Tiles (opcional, 144x144)
-    'og:image:secure_url': 'https://unidos-por-cesar.vercel.app//og-image.jpg', // Compatibilidad adicional
+    'og:image:secure_url': 'https://unidos-por-cesar.vercel.app/og-image.jpg', // Compatibilidad adicional
   },
 };
 
