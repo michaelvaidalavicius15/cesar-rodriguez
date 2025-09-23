@@ -14,15 +14,29 @@ export const metadata: Metadata = {
   authors: [{ name: 'Cesar Maicol Rodriguez Salvia' }],
   openGraph: {
     title: 'Ayuda para Cesar - Recuperar mi vida y caminar de nuevo',
-    description: 'Ayuda a Cesar a recaudar fondos para su cirugía de neuroestimulación',
+    description: 'Ayuda a Cesar a recaudar fondos para su cirugía de neuroestimulación.',
+    url: 'https://tupagina.com', // Replace with your actual domain
     type: 'website',
     locale: 'es_UY',
     alternateLocale: 'pt_BR',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 1200,
+        alt: 'Apoya a Cesar Maicol Rodriguez Salvia para recuperar su movilidad',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ayuda para Cesar - Recuperar mi vida y caminar de nuevo',
-    description: 'Ayuda a Cesar a recaudar fondos para su cirugía de neuroestimulación',
+    description: 'Ayuda a Cesar a recaudar fondos para su cirugía de neuroestimulación.',
+    images: ['/images/og-image.jpg'], // Twitter uses this for the card image
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
 };
 
@@ -34,7 +48,6 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#3b82f6" />
       </head>
