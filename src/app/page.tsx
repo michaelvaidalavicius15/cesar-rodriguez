@@ -41,8 +41,8 @@ export default function HomePage() {
       <HeroSection texts={texts} currentRaised={currentRaised} goalAmount={goalAmount} language={language} />
       
       <div className="container mx-auto px-6 space-y-24">
-        <ProgressBarSection texts={texts} currentRaised={currentRaised} goalAmount={goalAmount} language={language} />
         <StorySection sections={texts.sections} language={language} />
+        <ProgressBarSection texts={texts} currentRaised={currentRaised} goalAmount={goalAmount} language={language} />
         <DonationSection texts={texts} language={language} />
         <CallToAction texts={texts} />
       </div>

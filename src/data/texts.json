@@ -27,25 +27,23 @@
       },
       "howToHelp": {
         "title": "¿Cómo puedes ayudar?",
-        "content": "Puedes contribuir a esta causa haciendo una donación usando los datos bancarios de tu país. Si no puedes donar, te pido que por favor compartas mi historia con tus amigos, familiares y en tus redes sociales. Cada vez que compartes, me das la oportunidad de llegar a más personas que puedan ayudar."
+        "content": "Puedes contribuir a esta causa haciendo una donación usando los datos bancarios de tu país. Si no puedes donar, te pido que por favor compartas mi historia con tus amigos, familiares y en tus redes sociales. Cada vez que compartas, me das la oportunidad de llegar a más personas que puedan ayudar."
       }
     },
     "bankInfo": {
       "uruguay": {
         "title": "Donaciones desde Uruguay",
-        "bank": "Banco República Oriental del Uruguay (BROU)",
-        "accountNumber": "001-123456-78",
+        "bank": "Mi Dinero",
+        "accountNumber": "3701454748",
         "accountHolder": "Cesar Maicol Rodriguez Salvia",
-        "accountType": "Caja de Ahorro"
+        "accountType": "Internacional"
       },
       "brazil": {
         "title": "Donaciones desde Brasil",
-        "bank": "Banco do Brasil",
-        "agency": "1234-5",
-        "accountNumber": "12345678-9",
+        "bank": "Pendiente - Necesita datos bancarios completos",
         "accountHolder": "Cesar Maicol Rodriguez Salvia",
-        "accountType": "Conta Corrente",
-        "cpf": "123.456.789-00"
+        "cpf": "801.650.809-06",
+        "accountType": "Pendiente"
       },
       "other": {
         "title": "Donaciones internacionales",
@@ -100,19 +98,17 @@
     "bankInfo": {
       "brazil": {
         "title": "Doações do Brasil",
-        "bank": "Banco do Brasil",
-        "agency": "1234-5",
-        "accountNumber": "12345678-9",
+        "bank": "Pendiente - Precisa dados bancários completos",
         "accountHolder": "Cesar Maicol Rodriguez Salvia",
-        "accountType": "Conta Corrente",
-        "cpf": "123.456.789-00"
+        "cpf": "801.650.809-06",
+        "accountType": "A completar com banco e conta"
       },
       "uruguay": {
         "title": "Doações do Uruguai",
-        "bank": "Banco República Oriental del Uruguay (BROU)",
-        "accountNumber": "001-123456-78",
+        "bank": "Mi Dinero",
+        "accountNumber": "3701454748",
         "accountHolder": "Cesar Maicol Rodriguez Salvia",
-        "accountType": "Caja de Ahorro"
+        "accountType": "Conta Mi Dinero"
       },
       "other": {
         "title": "Doações internacionais",

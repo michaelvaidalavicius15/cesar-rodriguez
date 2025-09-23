@@ -32,7 +32,7 @@ export default function ProgressBarSection({ texts, currentRaised, goalAmount, l
             <Target className="h-8 w-8 text-accent mx-auto mb-3 animate-bounce" />
             <p className="text-sm text-medium-contrast mb-2">Objetivo</p>
             <p className="text-3xl font-bold text-accent">
-              ${goalAmount.toLocaleString(locale)}
+              ${goalAmount.toLocaleString(locale)} USD
             </p>
           </div>
           

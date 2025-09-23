@@ -4,6 +4,7 @@ import React from 'react';
 import { Heart, MapPin } from 'lucide-react';
 import { useCountryDetection } from '@/hooks/useCountryDetection';
 import { useLanguage } from '@/components/LanguageProvider';
+import Image from 'next/image';
 
 export default function Header() {
   const { isBrazil, isUruguay } = useCountryDetection();
@@ -49,31 +50,30 @@ export default function Header() {
                       }`}
                       title={language === 'es' ? 'Cambiar a Português' : 'Mudar para Español'}
                     >
-                      <div className={`absolute top-1 w-8 h-8 bg-white rounded-full shadow-md transition-all duration-300 flex items-center justify-center ${
+                      <div className={`absolute top-1 w-8 h-8 bg-white rounded-full shadow-md transition-all duration-300 flex items-center justify-center overflow-hidden ${
                         language === 'es' ? 'left-1' : 'left-11'
                       }`}>
                         {language === 'es' ? (
-                          <div className="w-6 h-4 relative overflow-hidden rounded-sm">
-                            <div className="absolute inset-0 flex flex-col">
-                              <div className="flex-1 bg-blue-500"></div>
-                              <div className="flex-1 bg-white"></div>
-                              <div className="flex-1 bg-blue-500"></div>
-                              <div className="flex-1 bg-white"></div>
-                              <div className="flex-1 bg-blue-500"></div>
-                              <div className="flex-1 bg-white"></div>
-                              <div className="flex-1 bg-blue-500"></div>
-                              <div className="flex-1 bg-white"></div>
-                              <div className="flex-1 bg-blue-500"></div>
-                            </div>
-                            <div className="absolute left-1 top-1/2 transform -translate-y-1/2 text-yellow-400 text-xs">☀</div>
+                          <div className="w-6 h-4 relative">
+                            <Image
+                              src="/Uruguay.png"
+                              alt="Bandera de Uruguay"
+                              width={24}
+                              height={16}
+                              className="object-cover rounded-sm"
+                              style={{ width: '24px', height: '16px' }}
+                            />
                           </div>
                         ) : (
-                          <div className="w-6 h-4 bg-green-500 rounded-sm relative overflow-hidden">
-                            <div className="absolute inset-0 bg-gradient-to-b from-green-400 via-yellow-400 to-blue-500"></div>
-                            <div className="absolute inset-x-0 top-1/2 h-px bg-yellow-400 transform -translate-y-1/2"></div>
-                            <div className="absolute left-1.5 top-1/2 w-1.5 h-1.5 bg-blue-500 rounded-full transform -translate-y-1/2 flex items-center justify-center">
-                              <div className="w-0.5 h-0.5 bg-yellow-300 rounded-full"></div>
-                            </div>
+                          <div className="w-6 h-4 relative">
+                            <Image
+                              src="/Brazil.png"
+                              alt="Bandeira do Brasil"
+                              width={24}
+                              height={16}
+                              className="object-cover rounded-sm"
+                              style={{ width: '24px', height: '16px' }}
+                            />
                           </div>
                         )}
                       </div>

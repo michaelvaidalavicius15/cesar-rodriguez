@@ -14,7 +14,6 @@ export const StorySection: React.FC<StorySectionsProps> = ({
     ([key, section]: [string, any]) =>
       section && section.title && section.content
   );
-  console.log(language);
   const quoteTranslations = {
     es: "La esperanza es lo último que se pierde. Con su ayuda, puedo volver a caminar y demostrar que los sueños nunca mueren, solo esperan el momento adecuado para hacerse realidad.",
     pt: "A esperança é a última a morrer. Com sua ajuda, posso voltar a caminhar e provar que os sonhos nunca morrem, apenas esperam o momento certo para se tornarem realidade.",
