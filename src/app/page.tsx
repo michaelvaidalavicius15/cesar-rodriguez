@@ -15,7 +15,7 @@ export default function HomePage() {
   const texts = textsData[language];
   const [currentRaised, setCurrentRaised] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const goalAmount = 30000;
+  const goalAmount = 50000;
 
   useEffect(() => {
     fetch('/api/progress')
